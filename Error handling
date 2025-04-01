@@ -1,0 +1,13 @@
+# Ask the user for a filename and handle errors if it doesn’t exist or can’t be read
+filename = input("Please enter the filename you want to open: ")
+
+try:
+    with open(assignment, "r") as file:
+        content = file.read()  # Read the content of the file
+        print("File content:")
+        print(content)
+
+except FileNotFoundError:
+    print(f"The file '{assignment}' does not exist!")
+except IOError:
+    print(f"An error occurred while trying to read the file '{assignment}'.")
